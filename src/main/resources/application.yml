@@ -1,0 +1,47 @@
+server:
+  port: 9000
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+---
+#
+#spring:
+#  config:
+#    activate:
+#      on-profile: dev
+#
+#  security:
+#    oauth2:
+#      authorizationserver:
+#        client:
+#          taco-admin-client:
+#            registration:
+#              client-id: "taco-admin-client"
+#              client-secret: "{noop}secret"
+#              client-authentication-methods:
+#                - "client_secret_basic"
+#              authorization-grant-types:
+#                - "authorization_code"
+#                - "refresh_token"
+#              redirect-uris:
+#                - "http://127.0.0.1:8989/login/oauth2/code"
+#              post-logout-redirect-uris:
+#                - "http://127.0.0.1:8989/"
+#              scopes:
+#                - "openid"
+#                - "profile"
+#                - "ADMIN"
+#            require-authorization-consent: true
+#
+#logging:
+#  level:
+#    org.springframework.security: trace
